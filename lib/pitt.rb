@@ -3,7 +3,6 @@ require "pit"
 
 class Pitt
   include Pit
-  VERSION = "0.0.1"
   def self.set(name, opts={})
     s_opts = opts.keys.all? {|k| k.is_a? Symbol}? self.to_strings(opts) : opts
     Pit.set(name, opts)
