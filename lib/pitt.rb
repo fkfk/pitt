@@ -23,6 +23,9 @@ class Pitt
   def self.to_symbols(opts)
     s_opts = {}
     opts.each do |k,v|
+      if v.is_a? Hash
+        v = self.to_symbols(v)
+      end
       s_opts[k.to_sym] = v
     end
     s_opts
@@ -31,6 +34,9 @@ class Pitt
   def self.to_strings(opts)
     s_opts = {}
     opts.each do |k,v|
+      if v.is_a? Hash
+        v = self.to_strings(v)
+      end
       s_opts[k.to_s] = v
     end
     s_opts
